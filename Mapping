@@ -1,0 +1,25 @@
+var players = [
+  {name: "akshay", age: 21, alias: "valentine"},
+  {name: "vibhor", age: 24, alias: "beast"},
+  {name: "suraj", age:23, alias: "voldemort"}
+];
+
+var games = [
+  {name: "cod", series: 6, start: 2009},
+  {name: "devil May Cry", series: 5, start: 2006},
+  {name: "Ghost", series: 4, start: 2003}
+];
+
+function mapList(myArr){
+  var mapping = myArr.map((getting) => {
+    return getting.name;
+  });
+  return mapping;
+}
+console.log(mapList(players));
+//console.log(mapList(games));
+
+players.push({name:"amit", age:24, alias: "nitAmit"});
+// console.log(players);
+
+console.log(mapList(players));
