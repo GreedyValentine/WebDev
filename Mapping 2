@@ -1,0 +1,33 @@
+var players = [
+  {name: "akshay", age: 21, alias: "valentine"},
+  {name: "vibhor", age: 24, alias: "beast"},
+  {name: "suraj", age:23, alias: "voldemort"}
+];
+
+var games = [
+  {name: "cod", series: 6, start: 2009},
+  {name: "devil May Cry", series: 5, start: 2006},
+  {name: "Ghost", series: 4, start: 2003}
+];
+
+var mapList = (myArr) => myArr.map((getting) => getting.name );
+
+//Mapping the Names list from Players Array.
+console.log(mapList(players));
+
+//Mapping the Names list from Games Array.
+console.log(mapList(games));
+
+//Pushing new content into the Players Array.
+players.push({name:"amit", age:24, alias: "nitAmit"});
+
+//Players Array after pushing the new content into the Array.
+// console.log(players);
+
+//The names after pushing new content into the Players Array.
+console.log(mapList(players));
+
+Output:
+["akshay", "vibhor", "suraj"]
+["cod", "devil May Cry", "Ghost"]
+["akshay", "vibhor", "suraj", "amit"]
