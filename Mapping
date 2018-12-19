@@ -10,7 +10,7 @@ var games = [
   {name: "Ghost", series: 4, start: 2003}
 ];
 
-function mapList(myArr){
+var mapList = (myArr) => {
   var mapping = myArr.map((getting) => {
     return getting.name;
   });
@@ -23,3 +23,7 @@ players.push({name:"amit", age:24, alias: "nitAmit"});
 // console.log(players);
 
 console.log(mapList(players));
+
+Ouput:
+["akshay", "vibhor", "suraj"]
+["akshay", "vibhor", "suraj", "amit"]
