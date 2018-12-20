@@ -1,0 +1,21 @@
+var players = ["akshay", "vibhor", "vaibhav", "suraj", "amit", "nitesh", "deepak", "nitin"];
+var index = 0;
+console.log("The total players are: " + players.length);
+
+
+function search(arr, player){
+  while(index < arr.length){
+    if(arr[index] === player){
+      console.log(player + " at Position " + (index+1));
+      break;
+    }
+    index++;
+  }
+}
+
+search(players,"vibhor");
+
+Output:
+
+"The total players are: 8"
+"vibhor at Position 2"
