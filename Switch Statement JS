@@ -1,0 +1,19 @@
+var player = function(playing){
+  switch(playing){
+    case 1:
+      return "voldemort";
+    case 2:
+      return "beast";
+    case 3:
+      return "valentine";
+    default:
+      return "guest";
+  }
+}
+
+var logger = function(atPlay){
+  var played = player(atPlay);
+  console.log("The gamer logged in is " + played);
+}
+
+logger(3);
