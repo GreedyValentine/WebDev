@@ -1,0 +1,21 @@
+function player(name, alias){
+  this.name = name;
+  this.alias = alias;
+}
+
+var one = new player("akshay", "valentine");
+var two = new player("vibhor", "beast");
+
+console.log(one);
+console.log(two);
+
+Output:
+
+[object Object] {
+  alias: "valentine",
+  name: "akshay"
+}
+[object Object] {
+  alias: "beast",
+  name: "vibhor"
+}
