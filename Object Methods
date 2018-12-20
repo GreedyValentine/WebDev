@@ -1,0 +1,19 @@
+var player = {
+  name: "akshay",
+  age: 21,
+  alias: "valentine",
+  weapons: ["sword", "bow", "lance", "axe"],
+  addWeapons: function(add1){
+    this.weapons.push(add1);
+  },
+  addAlias: function(add2){
+    this.alias = this.alias + ", " + add2;
+  }
+};
+
+console.log(player);
+
+player.addWeapons("chainsaw");
+player.addAlias("Ghost");
+
+console.log(player);
