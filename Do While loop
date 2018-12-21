@@ -1,0 +1,10 @@
+// noprotect
+let condition = false;
+do{
+  const input = prompt("Enter q to exit");
+  if(input === 'q'){
+    condition = false;
+  }else{
+    condition = true;
+  }
+}while(condition);
