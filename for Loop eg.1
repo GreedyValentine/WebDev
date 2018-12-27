@@ -1,0 +1,16 @@
+var player = ["akshay", "suraj", "amit", "vibhor", "vaibhav"];
+var i;
+
+function search(arr, sea){
+  for(i = 0; i < arr.length; i++){
+    if(arr[i] === sea){
+      console.log(sea + " at position " + (i+1));
+    }
+  }
+}
+
+search(player, "amit");
+
+Output:
+
+"amit at position 3"
