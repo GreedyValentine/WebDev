@@ -1,0 +1,28 @@
+// Initiate the array
+var elements = ["akshay","nitesh","nischal"];
+console.log(elements);
+
+// Sort the array in alphabetical order
+var sorted = elements.sort();
+console.log(sorted);
+
+// Reverse the array elements
+var reversed = elements.reverse();
+console.log(reversed);
+
+// Concatinate the array with another array
+var elements2 = ["nile","kros","baden"];
+var concatenated = elements.concat(elements2);
+console.log(concatenated);
+
+// Join the array elements
+var joined = concatenated.join("-");
+console.log(joined);
+
+Output:
+
+["akshay", "nitesh", "nischal"]
+["akshay", "nischal", "nitesh"]
+["nitesh", "nischal", "akshay"]
+["nitesh", "nischal", "akshay", "nile", "kros", "baden"]
+"nitesh-nischal-akshay-nile-kros-baden"
