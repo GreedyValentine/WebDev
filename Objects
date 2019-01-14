@@ -1,0 +1,14 @@
+var player={
+  name:"akshay",
+  age:21,
+  alias:"valentine"
+};
+console.log(player);
+
+Output:
+
+[object Object] {
+  age: 21,
+  alias: "valentine",
+  name: "akshay"
+}
