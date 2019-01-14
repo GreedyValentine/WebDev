@@ -1,0 +1,11 @@
+function adder(a,b){
+  function squarer(c){
+    return c * c; 
+  }
+  let d = squarer(a) + squarer(b);
+  return d;
+}
+console.log(adder(2,4));
+
+Output:
+20
