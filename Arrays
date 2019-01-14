@@ -1,0 +1,5 @@
+var element = ['akshay',3,14,"12",true,[1,2,3,4,54]];
+console.log(element[5][4]);
+
+Output:
+54
