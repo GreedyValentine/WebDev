@@ -1,0 +1,9 @@
+var fname = "akshay";
+var lname = "shenoy";
+var age = 21;
+
+console.log(`Happy Birthday Mr.${fname} ${lname}. You have turned ${age}.`);
+
+Output:
+
+"Happy Birthday Mr.akshay shenoy. You have turned 21."
