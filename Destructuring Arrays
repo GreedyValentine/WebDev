@@ -1,0 +1,14 @@
+// first way of destructuring array
+var player = ["akshay","amit","vaibhav","vibhor","suraj"];
+const [a,b,c,d,e] = player;
+console.log(d);
+
+//second way of destructuring array
+var second = ["valentine","lobo","inves","beast","voldemort"];
+let one,two,three,four,five;
+[one,two,three,four,five] = second;
+console.log(three);
+
+Output:
+"vibhor"
+"inves"
