@@ -1,0 +1,42 @@
+JS file:
+
+const players = ["akshay", "amit", "vibhor", "vaibhav"];
+
+const disp = (
+`<article>
+<h1>Players logged in.</h1>
+<ul>
+    ${players.map((loggers) => `<li>${loggers}</li>`)}
+</ul>
+</article>
+`);
+
+const yoyo = document.getElementById("yoyo");
+yoyo.innerHTML = disp;
+
+Html file:
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <h1>Hello Guys</h1>
+  <div id="yoyo">
+  <div>
+</body>
+</html>
+
+Output:
+
+Hello Guys
+Players logged in.
+akshay
+,
+amit
+,
+vibhor
+,
+vaibhav
