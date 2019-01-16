@@ -1,0 +1,30 @@
+HTML file:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <h1>Hello Guys</h1
+  <div id="yoyo">
+  </div>
+</body>
+</html>
+
+JS file:
+
+const lits = `
+    <ul id = "yoyo">
+      <li>akshay</li>
+      <li>vibhor</li>
+      <li>vaibhav</li>
+      <li>amit</li>
+      <li>likith</li>
+    </ul>`;
+
+const litss = document.getElementById("yoyo");
+yoyo.innerHTML = lits; 
+
