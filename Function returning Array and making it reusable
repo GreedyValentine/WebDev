@@ -1,0 +1,12 @@
+function find(myArr,element){
+  return myArr.filter((name) => name === element);
+}
+
+const [result1] = find(["akshay","amit","vibhor"],"amit");
+const [result2] = find(["momos","rolls","golgappas"],"rolls");
+console.log(result1);
+console.log(result2);
+
+Output:
+"amit"
+"rolls"
