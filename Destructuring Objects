@@ -1,0 +1,56 @@
+//First way of destructuring Objects
+var player = {
+  name:"akshay",
+  age:21,
+  alias:"valentine",
+  weapons:["bow and arrow","axe","sword"]
+};
+
+const {name,age,alias,weapons} = player;
+console.log(name,age,alias,weapons);
+
+//Second way of destructuring Objects
+var players = {
+  name1:"vibhor",
+  age1:24,
+  alias1:"beast",
+  weapons1:["lance","short sword"]
+};
+
+let name1,age1,alias1,weapons1;
+({name1,age1,alias1,weapons1} = players);
+
+console.log(name1,age1,alias1,weapons1);
+
+//Destructuring Nested Objects
+var play = {
+  name2:"suraj",
+  age2:23,
+  alias2:"voldemort",
+  address:[{
+    street:"tunga road",
+    city:"bangalore",
+    area:"jp nagar"
+  },
+ ],
+  weapons2:["luck"]
+};
+//Accessing Elements inside Nested Objects
+const {name2,age2,alias2,address:[{street,city,area}],weapons2} = play;
+console.log(street,city,area);
+
+Output:
+
+"akshay"
+21
+"valentine"
+["bow and arrow", "axe", "sword"]
+
+"vibhor"
+24
+"beast"
+["lance", "short sword"]
+
+"tunga road"
+"bangalore"
+"jp nagar"
