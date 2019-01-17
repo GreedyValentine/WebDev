@@ -1,0 +1,124 @@
+//CallBack for Summing 2 Values
+function sumOfVal(one,two,cb){
+  const sum = one + two;
+  cb(sum);
+}
+function printVal(val){
+  console.log(`The sum of 2 numbers is: ${val}`);
+}
+
+sumOfVal(10,20,printVal);
+
+//CallBack example for for loops
+function printDone(){
+  console.log("Done!!");
+}
+
+function printing(n,cb){
+  let i;
+  for(i = 0; i <= n; i++){
+    console.log(i);
+  }
+  cb();
+}
+
+printing(5,printDone);
+
+//CallBack used to Capitalize the first letters of Names in an Array
+function message(toCount){
+  console.log(`The number of Names that were capitalized is ${toCount}`);
+}
+function capitalize(myArr,cb){
+  let i;
+  for(i = 0; i < myArr.length; i++){
+    const name = myArr[i];
+    const capitalized = name.charAt(0).toUpperCase() + name.slice(1);
+    myArr[i] = capitalized;
+  }
+  cb(i);
+}
+var players = ["akshay", "vibhor", "amit", "vaibhav", "nitin", "nitesh"];
+console.log(players);
+capitalize(players,message);
+console.log(players);
+
+//Passing an Anonymous Function
+function adder(a,b,cb){
+  const add = a + b;
+  cb(add);
+}
+adder(10,40,function(p){
+  console.log(`The sum is: ${p}`);
+});
+
+//Why we need Promises 
+function counter(){
+  setTimeout(() => {
+    console.log("first");
+    setTimeout(() => {
+      console.log("second");
+      setTimeout(() => {
+        console.log("third");
+        setTimeout(() => {
+          console.log("fourth");
+          setTimeout(() => {
+            console.log("fifth");
+          },200);
+        },400);
+      },600);
+    },800);
+  },1000);  
+}
+
+counter();
+//Because the above program is hard to read and it gets tougher for bigger programs.
+
+//Functions with Callbacks
+setTimeout(() => {
+  function square(num,cb){
+    const squared = num * num;
+    cb(squared);
+  }
+  function divide(num,cb){
+    const divided = num / 100;
+    cb(divided);
+  }
+  function add(a,b,cb){
+    cb(a + b);
+  }
+  function total(a,b,cb1,cb2,cb3){
+    cb1(a,function(x){
+      cb2(b,function(y){
+        cb3(x,y,function(result){
+          console.log(`The result is ${result}`);
+        });
+      });
+    });
+  }
+  total(20,200,square,divide,add);
+},4000);
+
+Output:
+"The sum of 2 numbers is: 30"
+
+0
+1
+2
+3
+4
+5
+"Done!!"
+
+["akshay", "vibhor", "amit", "vaibhav", "nitin", "nitesh"]
+"The number of Names that were capitalized is 6"
+["Akshay", "Vibhor", "Amit", "Vaibhav", "Nitin", "Nitesh"]
+
+"The sum is: 50"
+
+"first"
+"second"
+"third"
+"fourth"
+"fifth"
+
+"The result is 402"
