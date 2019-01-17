@@ -1,0 +1,20 @@
+var elements = [1,2,3,4,"akshay","amit",100];
+
+const [a,b,c,d,e,...f] = elements;
+
+console.log(elements);
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+console.log(e);
+console.log(f);
+
+Output:
+[1, 2, 3, 4, "akshay", "amit", 100]
+1
+2
+3
+4
+"akshay"
+["amit", 100]
