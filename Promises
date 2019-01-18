@@ -1,0 +1,168 @@
+//Basic Example of Promise
+const testPromise = new Promise((resolve,reject) => {
+  if(Math.random() > 0.5){
+    reject("Promises are no good!!!");
+  }
+  setTimeout(() => {
+    resolve("All Ok!!");
+  },200);
+});
+
+testPromise.then((resolveMessage) => {
+  console.log(`Status: ${resolveMessage}`);
+}).then(() => {
+  console.log("Promises are Awesome!!!");
+}).catch((rejectMessage) => {
+  console.log(`Error:${rejectMessage}`);
+});
+
+//Using Promises for adding 2 numbers 
+function adder(a,b){
+  return new Promise((resolve,reject) => {
+    const added = a + b;
+    setTimeout(() => {
+      resolve(added);
+    },700);
+  });
+}
+adder(100,700).then((data) => console.log(`The sum is ${data}`));
+
+//Using Promises for multiply and squaring 2 numbers
+function multiply(a,b){
+  return new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve(a*b);
+    },900);
+  });
+} 
+function square(c){
+  return new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve(c*c);
+    },1100);
+  });
+}
+multiply(3,5).then((data) => {
+  return square(data); 
+}).then((result) => console.log(`The result is ${result}`));
+
+//Refining the code using ES6
+function multiply(a,b){
+  return new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve(a*b);
+    },1300);
+  });
+}
+function square(c){
+  return new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve(c*c);
+    },1500);
+  });
+}
+multiply(5,2)
+  .then((data) => square(data))
+  .then((result) => console.log(`The result is ${result}`));
+
+//Hard-coding
+function add(a,b){
+  return Promise.resolve(a+b);
+}
+add(1,3).then((data) => console.log(data));
+
+//More Examples of Hard Coding 
+const elements = Promise.resolve([10,20,30]);
+
+elements
+  .then((data) => data.map((n) => n * 10))
+  .then((result) => console.log(`The result is : ${result}`));
+
+Promise.reject()
+  .then(
+  res => {
+    console.log("resolved");
+  },
+  err => {
+    console.log("rejected");
+  }
+);
+
+//Chained Promise Example
+
+Promise.reject()
+  .then(
+  res => {
+    console.log("resolved");
+  },
+  err => {
+    console.log("rejected");
+  }
+  ).then(
+  res => {
+    console.log("cool");
+  },
+  err => {
+    console.log("totally not cool");
+  }
+);
+
+//Rewriting the Counter function from CallBacks using Promises
+function counter(message,time){
+  return new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve(message);
+    },time);
+    if(typeof message !== "string" || typeof time !== "number"){
+      reject();
+    }
+  });
+}
+counter("first",1700)
+    .then((message) => {
+    console.log(message);
+    return counter("second",1900)
+  }).then((message) => {
+    console.log(message);
+    return counter("third", 2100);
+  }).then((message) => {
+    console.log(message);
+    return counter("fourth",2300);
+  }).then((message) => {
+    console.log(message);
+    return counter("fifth",2500);
+  }).then((message) => {
+    console.log(message);
+  }).catch((err) => console.log("Incorrect Message"));
+  
+  Output:
+ 
+ //basic example for Promises 
+"Error:Promises are no good!!!"
+
+//Adding two numbers
+"The sum is 800"
+
+//Adding and squaring 2 numbers
+"The result is 225"
+
+//refined way of writing the above program
+"The result is 100"
+
+//Hard Coding 
+4
+"The result is : 100,200,300"
+
+//More examples of Hard Coding 
+"rejected"
+
+//Chained example of Promises
+"rejected"
+"cool"
+
+//Rewriting the counter function 
+"first"
+"second"
+"third"
+"fourth"
+"fifth"
